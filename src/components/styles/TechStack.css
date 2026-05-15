@@ -73,3 +73,14 @@
     font-size: 2rem;
   }
 }
+
+.techstack-container-embedded {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.techstack-container-embedded .marquee-wrapper {
+  margin: 20px 0;
+}
+

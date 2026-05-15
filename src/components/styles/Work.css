@@ -348,3 +348,15 @@
     margin: auto;
   }
 }
+
+.work-section-embedded {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.work-section-embedded .work-container {
+  padding: 0;
+  width: 100%;
+}
+

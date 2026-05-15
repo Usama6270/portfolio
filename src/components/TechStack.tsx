@@ -40,10 +40,10 @@ const techData = [
   { name: "Postman", icon: <SiPostman color="#FF6C37" />, category: "tools" },
 ];
 
-const TechStack = () => {
+const TechStack = ({ hideHeader = false }: { hideHeader?: boolean }) => {
   return (
-    <section className="techstack-container" id="techstack">
-      <h2 className="techstack-title">My Techstack</h2>
+    <section className={hideHeader ? "techstack-container-embedded" : "techstack-container"} id="techstack">
+      {!hideHeader && <h2 className="techstack-title">My Techstack</h2>}
       
       <div className="marquee-wrapper">
         <Marquee 

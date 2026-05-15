@@ -48,7 +48,7 @@ const projectsData = [
   }
 ];
 
-const Work = () => {
+const Work = ({ hideHeader = false }: { hideHeader?: boolean }) => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -74,18 +74,17 @@ const Work = () => {
         { opacity: 0, scale: 0.8, y: 50 }, 
         { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" }
       );
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
     }
   }, [selectedProject]);
 
   return (
-    <section className="work-section" id="work">
+    <section className={hideHeader ? "work-section-embedded" : "work-section"} id="work">
       <div className="work-container section-container">
-        <h2 className="work-title">
-          <span>PROJECTS</span>
-        </h2>
+        {!hideHeader && (
+          <h2 className="work-title">
+            <span>PROJECTS</span>
+          </h2>
+        )}
         <div className="work-grid">
           {projectsData.map((project, index) => (
             <div 
