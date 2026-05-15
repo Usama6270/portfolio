@@ -17,10 +17,10 @@
 }
 .social-icons:hover {
   transition: 0.3s;
-  color: var(--backgroundColor);
+  color: #fff;
 }
 .social-icons a:hover {
-  color: var(--backgroundColor);
+  color: #fff;
   /* transform: scale(1.2); */
 }
 .social-icons span {

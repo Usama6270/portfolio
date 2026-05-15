@@ -5,45 +5,65 @@ import {
   FaJs, 
   FaReact, 
   FaNodeJs, 
-  FaBootstrap 
+  FaGithub,
+  FaDocker,
+  FaAws,
+  FaPython,
+  FaNetworkWired
 } from "react-icons/fa";
 import { 
   SiTailwindcss, 
-  SiVite, 
-  SiFirebase, 
-  SiMui, 
-  SiVercel, 
-  SiNextdotjs,
   SiTypescript,
   SiMongodb,
   SiExpress,
-  SiPostman
+  SiPostman,
+  SiRedux,
+  SiMysql,
+  SiOpenai,
+  SiKubernetes,
+  SiFastapi,
+  SiHuggingface,
+  SiVite,
+  SiSupabase,
+  SiPrisma,
+  SiPytorch,
+  SiLangchain,
+  SiNextdotjs
 } from "react-icons/si";
+import { GiBrain, GiProcessor, GiShieldReflect } from "react-icons/gi";
 import "./styles/TechStack.css";
 
 const techData = [
-  { name: "HTML", icon: <FaHtml5 color="#E34F26" />, category: "frontend" },
-  { name: "CSS", icon: <FaCss3Alt color="#1572B6" />, category: "frontend" },
-  { name: "JavaScript", icon: <FaJs color="#F7DF1E" />, category: "frontend" },
-  { name: "TypeScript", icon: <SiTypescript color="#3178C6" />, category: "frontend" },
-  { name: "Tailwind CSS", icon: <SiTailwindcss color="#06B6D4" />, category: "frontend" },
   { name: "ReactJS", icon: <FaReact color="#61DAFB" />, category: "frontend" },
   { name: "Next.js", icon: <SiNextdotjs color="#ffffff" />, category: "frontend" },
-  { name: "Vite", icon: <SiVite color="#646CFF" />, category: "frontend" },
+  { name: "Python", icon: <FaPython color="#3776AB" />, category: "backend" },
+  { name: "FastAPI", icon: <SiFastapi color="#05998B" />, category: "backend" },
+  { name: "LangChain", icon: <SiLangchain color="#ffffff" />, category: "ai" },
+  { name: "PyTorch", icon: <SiPytorch color="#EE4C2C" />, category: "ai" },
+  { name: "Supabase", icon: <SiSupabase color="#3ECF8E" />, category: "backend" },
+  { name: "Prisma", icon: <SiPrisma color="#ffffff" />, category: "backend" },
+  { name: "FAISS", icon: <GiBrain color="#ffffff" />, category: "ai" },
+  { name: "HuggingFace", icon: <SiHuggingface color="#FFD21E" />, category: "ai" },
+  { name: "Groq LLM", icon: <GiProcessor color="#f3f3f3" />, category: "ai" },
+  { name: "Ollama", icon: <GiShieldReflect color="#ffffff" />, category: "ai" },
   { name: "Node JS", icon: <FaNodeJs color="#339933" />, category: "backend" },
-  { name: "Express", icon: <SiExpress color="#ffffff" />, category: "backend" },
   { name: "MongoDB", icon: <SiMongodb color="#47A248" />, category: "backend" },
-  { name: "Firebase", icon: <SiFirebase color="#FFCA28" />, category: "backend" },
-  { name: "Bootstrap", icon: <FaBootstrap color="#7952B3" />, category: "frontend" },
-  { name: "Material UI", icon: <SiMui color="#007FFF" />, category: "frontend" },
-  { name: "Vercel", icon: <SiVercel color="#ffffff" />, category: "tools" },
+  { name: "Docker", icon: <FaDocker color="#2496ED" />, category: "devops" },
+  { name: "Kubernetes", icon: <SiKubernetes color="#326CE5" />, category: "devops" },
+  { name: "AWS", icon: <FaAws color="#FF9900" />, category: "devops" },
+  { name: "Scapy", icon: <FaNetworkWired color="#ffffff" />, category: "cyber" },
+  { name: "GitHub", icon: <FaGithub color="#ffffff" />, category: "tools" },
   { name: "Postman", icon: <SiPostman color="#FF6C37" />, category: "tools" },
+  { name: "Vite", icon: <SiVite color="#646CFF" />, category: "tools" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss color="#06B6D4" />, category: "frontend" },
+  { name: "Redux", icon: <SiRedux color="#764ABC" />, category: "frontend" },
+  { name: "TypeScript", icon: <SiTypescript color="#3178C6" />, category: "frontend" },
 ];
 
-const TechStack = ({ hideHeader = false }: { hideHeader?: boolean }) => {
+const TechStack = () => {
   return (
-    <section className={hideHeader ? "techstack-container-embedded" : "techstack-container"} id="techstack">
-      {!hideHeader && <h2 className="techstack-title">My Techstack</h2>}
+    <section className="techstack-container" id="techstack">
+      <h2 className="techstack-title">My Techstack</h2>
       
       <div className="marquee-wrapper">
         <Marquee 
@@ -52,7 +72,7 @@ const TechStack = ({ hideHeader = false }: { hideHeader?: boolean }) => {
           pauseOnHover={true}
           direction="left"
         >
-          {techData.slice(0, 8).map((tech, index) => (
+          {techData.slice(0, 12).map((tech, index) => (
             <div className="tech-card" key={index}>
               <div className="tech-icon">{tech.icon}</div>
               <span className="tech-name">{tech.name}</span>
@@ -68,7 +88,7 @@ const TechStack = ({ hideHeader = false }: { hideHeader?: boolean }) => {
           pauseOnHover={true}
           direction="right"
         >
-          {techData.slice(8).map((tech, index) => (
+          {techData.slice(12).map((tech, index) => (
             <div className="tech-card" key={index}>
               <div className="tech-icon">{tech.icon}</div>
               <span className="tech-name">{tech.name}</span>

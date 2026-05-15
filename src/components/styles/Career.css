@@ -71,8 +71,55 @@
   letter-spacing: 0.7px;
   font-size: 20px;
   text-transform: capitalize;
-  margin: 10px 0px;
+  margin: 5px 0px;
   color: var(--accentColor);
+}
+
+.type-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #adacac;
+}
+
+.internship .type-tag {
+  background: rgba(127, 64, 255, 0.1);
+  border-color: rgba(127, 64, 255, 0.2);
+  color: #c2a4ff;
+}
+
+.education .type-tag {
+  background: rgba(0, 255, 136, 0.05);
+  border-color: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+}
+
+.career-date h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+.career-info-box.internship {
+  border-left: 2px solid rgba(127, 64, 255, 0.3);
+  padding-left: 20px;
+  margin-left: -22px;
+}
+
+.career-info-box.education {
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 20px;
+  margin-left: -22px;
 }
 .career-timeline {
   position: absolute;
