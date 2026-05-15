@@ -88,10 +88,10 @@ const WhatIDo = () => {
 
             <div className="what-content-in">
               <h3>DEVELOP</h3>
-              <h4>Description</h4>
+              <h4>Modern Web Solutions</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                Crafting high-performance web applications with a focus on 
+                scalability, clean code, and seamless user experiences.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
@@ -129,10 +129,10 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
             <div className="what-content-in">
               <h3>DESIGN</h3>
-              <h4>Description</h4>
+              <h4>Creative Visuals</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                Bridging the gap between design and technology through 
+                immersive 3D visuals and intuitive user interface designs.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
