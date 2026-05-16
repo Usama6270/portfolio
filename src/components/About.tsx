@@ -1,4 +1,4 @@
-import { FiCode, FiBriefcase, FiDownload, FiExternalLink } from "react-icons/fi";
+import { FiDownload, FiExternalLink } from "react-icons/fi";
 import "./styles/About.css";
 
 const About = () => {

@@ -9,7 +9,6 @@ import {
   FaDocker,
   FaAws,
   FaPython,
-  FaNetworkWired,
   FaGitAlt,
   FaJira
 } from "react-icons/fa";
