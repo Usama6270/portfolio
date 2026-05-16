@@ -1,37 +1,51 @@
 Vercel deployment and EmailJS setup
 =================================
 
-Follow these steps to deploy this Vite React portfolio to Vercel and ensure the contact form sends emails via EmailJS.
+This project is ready to import from GitHub and deploy on Vercel as a static Vite app.
 
-1. Create a Vercel project
-   - Go to https://vercel.com and create a new project.
-   - Import this Git repository or use the Vercel CLI from the project folder.
+1. Import from GitHub
+   - Open https://vercel.com/new
+   - Choose your GitHub repository for this portfolio
+   - Select the project and continue
 
-2. Environment variables (required)
-   - In the Vercel project settings > Environment Variables, add the following variables for all environments you want (Preview/Production):
-     - `VITE_EMAILJS_SERVICE_ID` = <your EmailJS service id>
-     - `VITE_EMAILJS_TEMPLATE_ID` = <your EmailJS template id>
-     - `VITE_EMAILJS_PUBLIC_KEY` = <your EmailJS public key>
+2. Confirm the build settings
+   - Framework preset: Vite
+   - Build command: `npm run build`
+   - Output directory: `dist`
+   - Root directory: leave empty unless the repo is inside a subfolder
 
-   - These values come from your EmailJS dashboard (https://www.emailjs.com/).
+   The repository already includes `vercel.json`, so SPA routing is handled.
 
-3. Build & Deploy
-   - Vercel will run `npm run build` (this project already has a `build` script).
-   - The `vercel.json` in the repository configures the static build and SPA routing.
+3. Add environment variables
+   - In Vercel project settings > Environment Variables, add these values for Preview and Production:
+     - `VITE_EMAILJS_SERVICE_ID` = your EmailJS service id
+     - `VITE_EMAILJS_TEMPLATE_ID` = your EmailJS template id
+     - `VITE_EMAILJS_PUBLIC_KEY` = your EmailJS public key
 
-   Using Vercel CLI (optional):
+   - Get them from your EmailJS dashboard: https://www.emailjs.com/
+   - Do not add these to git; keep them in Vercel and local `.env.local` only.
 
-   ```bash
-   npm i -g vercel
-   vercel login
-   vercel --prod
-   ```
+4. Deploy
+   - Click Deploy in Vercel after the settings are confirmed
+   - Vercel will build the app and publish it automatically
 
-4. Verify contact form
-   - After deployment, open the site and submit the contact form in the `Contact` section.
-   - If EmailJS is correctly configured and the env vars are set, you should receive the message at the destination configured in your EmailJS template.
+5. Verify the contact form
+   - Open the deployed site
+   - Submit the Contact form
+   - If the EmailJS env vars are correct, the message will send successfully
+
+Optional CLI deploy
+-------------------
+
+If you prefer the terminal:
+
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
 
 Notes
 -----
-- This project currently uses EmailJS via the frontend (`src/components/Contact.tsx`). No server is required.
-- Do not commit EmailJS keys to source control. Use Vercel Environment Variables to keep them secret.
+- This project uses EmailJS from the frontend (`src/components/Contact.tsx`), so no backend is required.
+- The build already succeeds locally with `npm run build`.
