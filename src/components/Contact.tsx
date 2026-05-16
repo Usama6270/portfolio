@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { FiGithub, FiLinkedin, FiMail, FiPhone, FiSend, FiCheckCircle } from "react-icons/fi";
 import { MdCopyright } from "react-icons/md";
@@ -16,6 +16,18 @@ const Contact = () => {
 
     setIsSending(true);
 
+    // Validate required env vars early to give clearer errors
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setIsSending(false);
+      console.error("EmailJS env vars missing", { serviceId, templateId, publicKey });
+      alert("EmailJS is not configured. Please set the required environment variables and try again.");
+      return;
+    }
+
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -32,11 +44,36 @@ const Contact = () => {
         },
         (error) => {
           setIsSending(false);
-          alert("Failed to send message. Please try again.");
           console.error("EmailJS Error:", error);
+          // Try to extract details from common error shapes
+          let details = "unknown error";
+          try {
+            if (error && typeof error === "object") {
+              // EmailJS sometimes returns { status, text }
+              // or an Error with message
+              // or a string
+              // stringify for full visibility
+              details = error.text || error.status || (error.message && String(error.message)) || JSON.stringify(error);
+            } else if (typeof error === "string") {
+              details = error;
+            }
+          } catch (e) {
+            details = "failed to parse error details";
+          }
+          alert(`Failed to send message (${details}). Please check console/network and try again.`);
         }
       );
   };
+
+  useEffect(() => {
+    // Initialize EmailJS SDK (safe to call even if public key is passed to sendForm)
+    try {
+      const pub = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      if (pub) emailjs.init(pub);
+    } catch (err) {
+      console.warn("EmailJS init failed:", err);
+    }
+  }, []);
 
   return (
     <div className="contact-section section-container" id="contact">
