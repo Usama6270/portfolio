@@ -70,14 +70,6 @@
   }
 }
 .landing-video,
-.landing-intro {
-  position: absolute;
-  z-index: 9;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -150%);
-  text-align: center;
-}
 .landing-image {
   position: absolute;
   bottom: 0;
@@ -167,6 +159,29 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
+.landing-intro {
+  position: absolute;
+  z-index: 9;
+  top: 12%;
+  left: 0;
+}
+.landing-intro h2 {
+  margin: 0;
+  color: var(--accentColor);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.landing-intro h1 {
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: 500;
+  font-family: "Geist", sans-serif;
+}
+
 @media screen and (max-width: 499px) {
   .landing-intro {
     top: 15%;
@@ -210,11 +225,11 @@
 
 .landing-info {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 15%;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 40px;
+  top: inherit;
   z-index: 9;
-  text-align: center;
 }
 .landing-info h3 {
   font-size: 22px;
@@ -327,10 +342,39 @@ h2.landing-info-h2 {
   .character-model::before {
     display: none;
   }
+  .landing-intro {
+    top: 50%;
+    left: auto;
+    right: 66%;
+    transform: translate(0%, -50%);
+  }
+
+  .landing-info {
+    bottom: auto;
+    top: 51%;
+    z-index: inherit;
+    text-align: left;
+    transform: translate(0%, -50%);
+    right: auto;
+    left: 66%;
+  }
 }
 @media screen and (min-width: 1200px) {
-  .header {
-    padding: 35px 0px;
+  .landing-intro {
+    top: 50%;
+    left: auto;
+    right: 70%;
+    transform: translate(0%, -50%);
+  }
+
+  .landing-info {
+    bottom: auto;
+    top: 51%;
+    z-index: inherit;
+    text-align: left;
+    transform: translate(0%, -50%);
+    right: auto;
+    left: 70%;
   }
 }
 @media screen and (min-width: 1600px) {

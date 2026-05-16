@@ -1,7 +1,7 @@
 .about-section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   position: relative;
   min-height: 100vh;
   width: var(--cWidth);
