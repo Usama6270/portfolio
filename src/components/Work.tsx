@@ -10,7 +10,7 @@ const projectsData = [
     description: "A multi-layered AI system utilizing modern AI orchestration to handle diverse data types (image, text, and voice). Uses RAG to ground responses in verified datasets and a Vision pipeline for crop disease diagnosis.",
     image: "/images/crop.png",
     github: "https://github.com/hateemxpam/AI-Crop-Advisory-System---Multi-Modal-RAG",
-    tech: ["GPT-4o", "LangChain", "FAISS", "PyTorch", "FastAPI", "OpenCV"],
+    tech: ["GPT-4o", "RAG", "Multimodal AI", "Prompt Engineering", "LangChain", "PyTorch"],
     vision: "Providing farmers with instant, localized, and context-aware advice through state-of-the-art multimodal AI orchestration while eliminating hallucinations.",
     features: [
       "AI/LLM: OpenAI GPT-4o & Google Gemini 2.0 with LangChain Orchestration",
@@ -25,7 +25,7 @@ const projectsData = [
     description: "An automation and workflow optimization tool focused on automating routine tasks for freelancers, such as buyer requests, profile monitoring, and keyword analysis.",
     image: "/images/fiverr.png",
     github: "https://github.com/Raffayy/AutoFiverr-FYP",
-    tech: ["Chrome Extension", "FastAPI", "Supabase", "Ollama", "Llama3", "BeautifulSoup"],
+    tech: ["Ollama", "Llama3", "Express.js", "Supabase", "Scraping", "Automation"],
     vision: "Empowering freelancers by bridging the gap between marketplace analytics and AI-driven automation using local, privacy-focused LLMs.",
     features: [
       "Chrome Extension built with HTML, CSS, and JavaScript",
@@ -44,11 +44,11 @@ const projectsData = [
     description: "A full-stack implementation of a high-traffic marketplace platform, focusing on CRUD operations, server-side rendering, and responsive design.",
     image: "/images/airbnb.png",
     github: "https://github.com/hateemxpam/Airbnb-Clone",
-    tech: ["Next.js", "React", "Prisma", "NextAuth", "Cloudinary", "Framer Motion"],
+    tech: ["Next.js", "React", "Redux", "Prisma", "MySQL", "Tailwind"],
     vision: "Replicating a high-scale marketplace architecture with a focus on Server-Side Rendering and intuitive user mapping.",
     features: [
-      "Frontend: React.js & Next.js (SSR) with Framer Motion animations",
-      "Database & Auth: PostgreSQL (Prisma ORM) & NextAuth.js/Clerk",
+      "Frontend: React.js with Framer Motion animations",
+      "Database & Auth: MySQL (Prisma ORM) & NextAuth.js/Clerk",
       "Storage & Map: Cloudinary (Images) & Mapbox/Google Maps API integration",
       "Backend: Optimized Next.js API Routes for high-concurrency handling"
     ]
@@ -58,7 +58,7 @@ const projectsData = [
     description: "A cybersecurity-focused desktop application for secure, multi-user messaging and file sharing, implementing a Zero-Knowledge architecture.",
     image: "/images/secure-msg.png",
     github: "https://github.com/hateemxpam/Information-Security-Project",
-    tech: ["RSA", "AES-256", "Sockets", "PyQt5", "SHA-256", "PyCryptodome"],
+    tech: ["Cybersecurity", "E2EE", "RSA/AES", "Sockets", "Python", "Encryption"],
     vision: "Providing absolute privacy through end-to-end encryption and robust cryptographic key exchange protocols.",
     features: [
       "Security: RSA for Key Exchange & AES-256 (PyCryptodome) for Payload",
@@ -72,7 +72,7 @@ const projectsData = [
     description: "A network-level security tool that reassembles network flows to inspect Layer 7 data payloads, identifying application protocols and signatures.",
     image: "/images/dpi.png",
     github: "https://github.com/hateemxpam/Deep-Packet-Inspection",
-    tech: ["Scapy", "PyShark", "Libpcap", "Regex", "Matplotlib", "Seaborn"],
+    tech: ["Networking", "Packet Analysis", "Scapy", "Python", "Data Viz"],
     vision: "Enhancing network security through deep, byte-level inspection of modern application-layer protocols.",
     features: [
       "Core: Scapy (Packet manipulation) & PyShark (TShark wrapper)",
@@ -100,12 +100,12 @@ const Work = () => {
 
   useEffect(() => {
     if (selectedProject && modalRef.current && overlayRef.current) {
-      gsap.fromTo(overlayRef.current, 
-        { opacity: 0 }, 
+      gsap.fromTo(overlayRef.current,
+        { opacity: 0 },
         { opacity: 1, duration: 0.3 }
       );
-      gsap.fromTo(modalRef.current, 
-        { opacity: 0, scale: 0.8, y: 50 }, 
+      gsap.fromTo(modalRef.current,
+        { opacity: 0, scale: 0.8, y: 50 },
         { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" }
       );
       document.body.style.overflow = "hidden";
@@ -123,9 +123,9 @@ const Work = () => {
           </h2>
           <div className="work-grid">
             {projectsData.map((project, index) => (
-              <div 
-                className="project-card" 
-                key={index} 
+              <div
+                className="project-card"
+                key={index}
                 onClick={(e) => openModal(e, project)}
                 style={{ cursor: 'pointer', pointerEvents: 'auto' }}
               >
@@ -137,10 +137,10 @@ const Work = () => {
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <div className="project-footer">
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="project-link"
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -158,9 +158,9 @@ const Work = () => {
       </section>
 
       {selectedProject && createPortal(
-        <div 
-          className="modal-overlay" 
-          ref={overlayRef} 
+        <div
+          className="modal-overlay"
+          ref={overlayRef}
           onClick={closeModal}
           style={{ display: 'flex', zIndex: 99999 }}
         >
@@ -181,13 +181,13 @@ const Work = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="modal-body">
                   <h3 className="section-subtitle">The Vision</h3>
                   <p className="project-detail-text">
                     {selectedProject.vision}
                   </p>
-                  
+
                   <h3 className="section-subtitle">Key Features</h3>
                   <ul className="features-list">
                     {selectedProject.features.map((feature: string, i: number) => (
@@ -195,12 +195,12 @@ const Work = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div className="modal-actions">
-                  <a 
-                    href={selectedProject.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="modal-btn github"
                   >
                     <FaGithub /> View Source

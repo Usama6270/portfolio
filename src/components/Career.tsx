@@ -12,7 +12,7 @@ const Career = () => {
           <div className="career-timeline">
             <div className="career-dot"></div>
           </div>
-          
+
           <div className="career-info-box internship">
             <div className="career-info-in">
               <div className="career-role">
@@ -25,8 +25,8 @@ const Career = () => {
               </div>
             </div>
             <p>
-              Developed and maintained full-stack web applications using the MERN Stack, 
-              integrating AI solutions to enhance system functionality. Designed and 
+              Developed and maintained full-stack web applications using the MERN Stack,
+              integrating AI solutions to enhance system functionality. Designed and
               implemented REST APIs to streamline communication between services.
             </p>
           </div>
@@ -43,8 +43,8 @@ const Career = () => {
               </div>
             </div>
             <p>
-              Developed and maintained full-stack web applications using the MERN stack 
-              and collaborated with cross-functional teams on real-world projects to 
+              Developed and maintained full-stack web applications using the MERN stack
+              and collaborated with cross-functional teams on real-world projects to
               enhance technical skills and professional software development practices.
             </p>
           </div>
@@ -61,8 +61,8 @@ const Career = () => {
               </div>
             </div>
             <p>
-              Final-year student specializing in web development and AI-driven systems. 
-              Consistently recognized on the Dean's List of Honors (Fall 2025) for 
+              Final-year student specializing in web development and AI-driven systems.
+              Recognized on the Dean's List of Honors (Fall 2025) for
               academic excellence.
             </p>
           </div>
@@ -79,7 +79,7 @@ const Career = () => {
               </div>
             </div>
             <p>
-              Completed higher secondary education with a focus on core engineering 
+              Completed higher secondary education with a focus on core engineering
               fundamentals.
             </p>
           </div>

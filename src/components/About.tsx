@@ -13,26 +13,44 @@ const About = () => {
           <div className="about-text-wrapper">
             <div className="intro-badge">
               <span className="dot"></span>
-              <span className="badge-text">Final Year Software Engineer</span>
+              <span className="badge-text">Software Engineer</span>
             </div>
             <h2 className="hello-text">Hello, I'm</h2>
             <h1 className="name-text">
               <span className="gradient-text">Hateem</span>
             </h1>
             <p className="description para">
-              A final-year Software Engineering student at FAST-NUCES, Islamabad, 
-              specializing in full-stack web development and AI-driven systems. 
-              Proficient in the MERN stack with hands-on experience in cloud-native 
-              technologies (Docker, Kubernetes) and RAG-based applications. 
-              I excel at building scalable web applications and integrating AI solutions 
+              A final-year Software Engineering student at FAST-NUCES, Islamabad,
+              specializing in full-stack web development and AI-driven systems.
+              Proficient in the MERN stack with hands-on experience in cloud-native
+              technologies (Docker, Kubernetes) and RAG-based applications.
+              I excel at building scalable web applications and integrating AI solutions
               for real-world problems.
             </p>
-            
+
             <div className="about-buttons">
-              <a href="/Hateem_CV.pdf" download="Hateem_Khush_Bakht_CV.pdf" className="btn btn-primary">
+              <a
+                href="/Hateem_CV.pdf"
+                download="Hateem_Khush_Bakht_CV.pdf"
+                className="btn btn-primary"
+                onClick={() => {
+                  window.location.href = "/Hateem_CV.pdf";
+                }}
+              >
                 <FiDownload /> Download CV
               </a>
-              <a href="#work" className="btn btn-secondary">
+
+              <a
+                href="#work"
+                className="btn btn-secondary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  // Using the global smoother instance for correct navigation
+                  import("./Navbar").then((module) => {
+                    module.smoother?.scrollTo("#work", true, "top top");
+                  });
+                }}
+              >
                 <FiExternalLink /> View Projects
               </a>
             </div>

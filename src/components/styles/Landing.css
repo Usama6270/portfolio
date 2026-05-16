@@ -82,6 +82,9 @@
   z-index: 2;
   position: relative;
 }
+.character-container {
+  pointer-events: none;
+}
 .character-rim {
   position: absolute;
   width: 400px;
@@ -108,7 +111,7 @@
   left: 50%;
   z-index: 0;
   bottom: 50px;
-  pointer-events: inherit;
+  pointer-events: none;
 }
 .character-model::after {
   content: "";

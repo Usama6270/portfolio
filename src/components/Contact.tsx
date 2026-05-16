@@ -18,10 +18,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "YOUR_PUBLIC_KEY"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -113,7 +113,7 @@ const Contact = () => {
 
         <div className="contact-footer">
           <div className="copyright">
-            <MdCopyright /> 2024
+            <MdCopyright /> Hateem Khush Bakht
           </div>
         </div>
       </div>
