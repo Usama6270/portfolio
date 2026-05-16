@@ -6,79 +6,91 @@ import "./styles/Work.css";
 
 const projectsData = [
   {
-    title: "AI Crop Advisory System",
-    description: "A multi-layered AI system utilizing modern AI orchestration to handle diverse data types (image, text, and voice). Uses RAG to ground responses in verified datasets and a Vision pipeline for crop disease diagnosis.",
-    image: "/images/crop.png",
-    github: "https://github.com/hateemxpam/AI-Crop-Advisory-System---Multi-Modal-RAG",
-    tech: ["GPT-4o", "RAG", "Multimodal AI", "Prompt Engineering", "LangChain", "PyTorch"],
-    vision: "Providing farmers with instant, localized, and context-aware advice through state-of-the-art multimodal AI orchestration while eliminating hallucinations.",
+    title: "HomeEase Mobile App",
+    description: "Cross-platform mobile platform connecting customers, service providers, and admins with booking, scheduling, reviews, and earnings tracking.",
+    image: "/images/project-homeease.svg",
+    github: "https://github.com/Usama6270",
+    tech: ["Node.js", "Express.js", "MongoDB", "REST APIs", "AI Recommendations"],
+    vision: "Build an intelligent and reliable service ecosystem where users can book trusted services quickly and providers can manage work efficiently.",
     features: [
-      "AI/LLM: OpenAI GPT-4o & Google Gemini 2.0 with LangChain Orchestration",
-      "Vector Search: Sentence Transformers (Embeddings) & FAISS/ChromaDB",
-      "Computer Vision: PyTorch/TensorFlow with Pretrained Models (EfficientNet-B2)",
-      "Data Processing: Pandas, NumPy, and OpenCV for image processing",
-      "Backend & UI: Python, FastAPI/Streamlit, and Whisper API for voice-to-text"
+      "Service booking, scheduling, and rating workflow",
+      "Secure authentication and role-based access for customer, provider, and admin",
+      "RESTful backend APIs for app-wide communication",
+      "AI-powered personalized service recommendations",
+      "Customer-assistance chatbot integration"
     ]
   },
   {
-    title: "AutoFiverr",
-    description: "An automation and workflow optimization tool focused on automating routine tasks for freelancers, such as buyer requests, profile monitoring, and keyword analysis.",
-    image: "/images/fiverr.png",
-    github: "https://github.com/Raffayy/AutoFiverr-FYP",
-    tech: ["Ollama", "Llama3", "Express.js", "Supabase", "Scraping", "Automation"],
-    vision: "Empowering freelancers by bridging the gap between marketplace analytics and AI-driven automation using local, privacy-focused LLMs.",
+    title: "Dry Fruit Admin Panel (MERN)",
+    description: "Responsive admin dashboard for product, user, and sales management with reusable components and secure API integration.",
+    image: "/images/project-dryfruit.svg",
+    github: "https://github.com/Usama6270",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "MERN"],
+    vision: "Deliver a clean, scalable admin interface to manage e-commerce operations with strong usability and performance.",
     features: [
-      "Chrome Extension built with HTML, CSS, and JavaScript",
-      "Python FastAPI backend orchestration",
-      "Supabase PostgreSQL database for data persistence",
-      "Ollama integration for local LLM execution",
-      "Llama3 as the primary local text model",
-      "Gemini 2.5 Flash for specialized visual/image-related tasks",
-      "BeautifulSoup for advanced scraping-related parsing",
-      "LangChain for connecting prompts to the local model ecosystem",
-      "Celery support for background task processing and automation"
+      "Product CRUD and inventory monitoring tools",
+      "User and sales analytics management views",
+      "Reusable UI components and modular architecture",
+      "Secure APIs with robust request handling",
+      "Fully responsive design for mobile and desktop"
     ]
   },
   {
-    title: "Airbnb Clone",
-    description: "A full-stack implementation of a high-traffic marketplace platform, focusing on CRUD operations, server-side rendering, and responsive design.",
-    image: "/images/airbnb.png",
-    github: "https://github.com/hateemxpam/Airbnb-Clone",
-    tech: ["Next.js", "React", "Redux", "Prisma", "MySQL", "Tailwind"],
-    vision: "Replicating a high-scale marketplace architecture with a focus on Server-Side Rendering and intuitive user mapping.",
+    title: "Movie Genre Detection (Deep Learning)",
+    description: "Trailer-based movie genre classifier built with YouTube trailer data, extracted frames, and semi-supervised learning.",
+    image: "/images/project-movie-genre.svg",
+    github: "https://github.com/Usama6270",
+    tech: ["ResNet50", "K-means", "Python", "Deep Learning", "Computer Vision"],
+    vision: "Improve automated genre understanding by combining transfer learning and semi-supervised labeling at scale.",
     features: [
-      "Frontend: React.js with Framer Motion animations",
-      "Database & Auth: MySQL (Prisma ORM) & NextAuth.js/Clerk",
-      "Storage & Map: Cloudinary (Images) & Mapbox/Google Maps API integration",
-      "Backend: Optimized Next.js API Routes for high-concurrency handling"
+      "Collected and processed trailer data from YouTube",
+      "Fine-tuned ResNet50 on extracted video frames",
+      "Used ResNet50 embeddings with K-means for semi-supervised labeling",
+      "Implemented full pipeline: collection, preprocessing, training, and evaluation"
     ]
   },
   {
-    title: "Secure E2EE Messaging",
-    description: "A cybersecurity-focused desktop application for secure, multi-user messaging and file sharing, implementing a Zero-Knowledge architecture.",
-    image: "/images/secure-msg.png",
-    github: "https://github.com/hateemxpam/Information-Security-Project",
-    tech: ["Cybersecurity", "E2EE", "RSA/AES", "Sockets", "Python", "Encryption"],
-    vision: "Providing absolute privacy through end-to-end encryption and robust cryptographic key exchange protocols.",
+    title: "Sign Language Digit Recognition (CNN)",
+    description: "Image classification system for hand-sign digit recognition trained on labeled gesture data with preprocessing and augmentation.",
+    image: "/images/project-sign-digit.svg",
+    github: "https://github.com/Usama6270",
+    tech: ["CNN", "Python", "Image Processing", "Data Augmentation", "Classification"],
+    vision: "Enable practical and fast sign-based digit understanding using compact deep learning models.",
     features: [
-      "Security: RSA for Key Exchange & AES-256 (PyCryptodome) for Payload",
-      "Networking: Python Socket Programming with Threading for concurrency",
-      "Integrity: SHA-256 hashing for file integrity and secure password hashing",
-      "GUI: Modern desktop interface built using PyQt5/Tkinter"
+      "Preprocessed gesture images for robust model training",
+      "Applied augmentation to improve generalization and accuracy",
+      "Trained and evaluated CNN model on labeled digit gestures",
+      "Validated prediction performance across unseen samples"
     ]
   },
   {
-    title: "DPI Engine",
-    description: "A network-level security tool that reassembles network flows to inspect Layer 7 data payloads, identifying application protocols and signatures.",
-    image: "/images/dpi.png",
-    github: "https://github.com/hateemxpam/Deep-Packet-Inspection",
-    tech: ["Networking", "Packet Analysis", "Scapy", "Python", "Data Viz"],
-    vision: "Enhancing network security through deep, byte-level inspection of modern application-layer protocols.",
+    title: "PakSentinel",
+    description: "End-to-end NLP misinformation detection pipeline with reproducible experiments, MLflow tracking, FastAPI inference, and assignment-aligned reporting tasks.",
+    image: "/images/project-paksentinel.svg",
+    github: "https://github.com/Usama6270/PakSentinel",
+    tech: ["Python", "NLP", "MLflow", "FastAPI", "Pytest", "Reproducible ML"],
+    vision: "Build a reliable misinformation detection workflow where data processing, experiments, model audits, and API serving stay reproducible and traceable.",
     features: [
-      "Core: Scapy (Packet manipulation) & PyShark (TShark wrapper)",
-      "Analysis: Libpcap library for high-speed packet capture",
-      "Detection: Signature matching using advanced Regex engine",
-      "Visualization: Traffic analytics and graphing via Matplotlib/Seaborn"
+      "Modular project design across data, NLP, features, models, tracking, and API layers",
+      "End-to-end run order from dataset build to full experiment, ablations, and submission artifacts",
+      "MLflow-based experiment tracking and model registry checks for controlled comparison",
+      "FastAPI inference service for deployable model serving",
+      "Automated verification through API and model tests with pytest"
+    ]
+  },
+  {
+    title: "TrendScope Analytics Pipeline",
+    description: "A fully reproducible 6-stage NLP data engineering pipeline for collecting, cleaning, representing, versioning, and analyzing emerging product trends.",
+    image: "/images/project-trendscope.svg",
+    github: "https://github.com/Usama6270/Trend_Intelligence_Pipeline",
+    tech: ["Python", "Data Engineering", "DVC", "Airflow", "NLP", "From Scratch"],
+    vision: "Create a transparent trend intelligence stack that runs from raw web data to linguistic analytics with strict version control and orchestration.",
+    features: [
+      "Stage-based pipeline: scraping, preprocessing, representation, statistics, and Airflow orchestration",
+      "Custom NLP implementation without NLTK/spaCy/scikit-learn/NumPy dependencies",
+      "DVC data versioning workflow with reproducible dataset states and tags",
+      "Linguistic intelligence reports including n-grams, edit distance, and perplexity",
+      "Production-style orchestration via Airflow DAG with retries and task-level controls"
     ]
   }
 ];
@@ -130,7 +142,14 @@ const Work = () => {
                 style={{ cursor: 'pointer', pointerEvents: 'auto' }}
               >
                 <div className="project-image-container">
-                  <img src={project.image} alt={project.title} />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = "/images/placeholder.webp";
+                    }}
+                  />
                   <div className="project-image-overlay"></div>
                 </div>
                 <div className="project-content">
@@ -170,7 +189,13 @@ const Work = () => {
             </button>
             <div className="modal-grid">
               <div className="modal-image">
-                <img src={selectedProject.image} alt={selectedProject.title} />
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/images/placeholder.webp";
+                  }}
+                />
               </div>
               <div className="modal-info">
                 <div className="modal-header">

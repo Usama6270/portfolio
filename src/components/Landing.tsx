@@ -8,20 +8,24 @@ const Landing = ({ children }: PropsWithChildren) => {
         <div className="landing-container">
           <div className="landing-intro">
             <h1>
-              HATEEM
+              USAMA
               <br />
-              <span>KHUSH BAKHT</span>
+              <span>JAMSHED</span>
             </h1>
           </div>
           <div className="landing-info">
             <h3>A Professional</h3>
-            <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Full-Stack</div>
-              <div className="landing-h2-2">AI Developer</div>
-            </h2>
-            <h2>
-              <div className="landing-h2-info">Full-Stack</div>
-              <div className="landing-h2-info-1">AI Developer</div>
+            <h2 className="landing-info-main" aria-label="Full-Stack Developer and Full-Stack AI Developer">
+              <span className="role-text role-text-1">
+                Full-Stack
+                <br />
+                Developer
+              </span>
+              <span className="role-text role-text-2">
+                Full-Stack
+                <br />
+                AI Developer
+              </span>
             </h2>
           </div>
         </div>

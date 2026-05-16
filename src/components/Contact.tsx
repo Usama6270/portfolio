@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiPhone, FiSend, FiCheckCircle } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiPhone, FiSend, FiCheckCircle } from "react-icons/fi";
 import { MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 
@@ -48,14 +48,14 @@ const Contact = () => {
             <div className="contact-info-wrap">
               <div className="info-item">
                 <h4>Email</h4>
-                <a href="mailto:hateemjaved8@gmail.com" className="info-link">
-                  <FiMail /> hateemjaved8@gmail.com
+                <a href="mailto:usamaunder19@gmail.com" className="info-link">
+                  <FiMail /> usamaunder19@gmail.com
                 </a>
               </div>
               <div className="info-item">
                 <h4>Phone</h4>
-                <a href="tel:+923000748808" className="info-link">
-                  <FiPhone /> (+92)-300-0748808
+                <a href="tel:+923041632932" className="info-link">
+                  <FiPhone /> (+92)-304-1632932
                 </a>
               </div>
             </div>
@@ -63,15 +63,13 @@ const Contact = () => {
             <div className="contact-socials-wrap">
               <h4>Social</h4>
               <div className="social-icons-wrapper">
-                <a href="https://github.com/hateemxpam" target="_blank" className="social-icon-btn" aria-label="GitHub">
+                <a href="https://github.com/Usama6270" target="_blank" className="social-icon-btn" aria-label="GitHub">
                   <FiGithub />
                 </a>
-                <a href="https://www.linkedin.com/in/hateemkb/" target="_blank" className="social-icon-btn" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/usama-jamshed-a9a223264/" target="_blank" className="social-icon-btn" aria-label="LinkedIn">
                   <FiLinkedin />
                 </a>
-                <a href="https://www.instagram.com/_.hateem" target="_blank" className="social-icon-btn" aria-label="Instagram">
-                  <FiInstagram />
-                </a>
+                
               </div>
             </div>
           </div>
@@ -113,7 +111,7 @@ const Contact = () => {
 
         <div className="contact-footer">
           <div className="copyright">
-            <MdCopyright /> Hateem Khush Bakht
+            <MdCopyright /> Usama Jamshed
           </div>
         </div>
       </div>

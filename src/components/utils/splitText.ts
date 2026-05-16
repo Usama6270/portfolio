@@ -12,49 +12,48 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 export default function setSplitText() {
   ScrollTrigger.config({ ignoreMobileResize: true });
-  if (window.innerWidth < 900) return;
   const paras: NodeListOf<ParaElement> = document.querySelectorAll(".para");
   const titles: NodeListOf<ParaElement> = document.querySelectorAll(".title");
+  const cleanupSplit = (el: ParaElement) => {
+    if (el.anim) {
+      el.anim.progress(1).kill();
+      el.anim = undefined;
+    }
+    if (el.split) {
+      el.split.revert();
+      el.split = undefined;
+    }
+  };
+
+  // On mobile, just ensure original text is restored and visible.
+  if (window.innerWidth < 900) {
+    paras.forEach((para) => {
+      cleanupSplit(para);
+      para.classList.add("visible");
+      para.style.opacity = "1";
+      para.style.visibility = "visible";
+    });
+    titles.forEach((title) => {
+      cleanupSplit(title);
+      title.style.opacity = "1";
+      title.style.visibility = "visible";
+    });
+    return;
+  }
 
   const TriggerStart = window.innerWidth <= 1024 ? "top 60%" : "20% 60%";
   const ToggleAction = "play pause resume reverse";
 
+  // Keep paragraph content always visible to avoid hidden text states.
   paras.forEach((para: ParaElement) => {
+    cleanupSplit(para);
     para.classList.add("visible");
-    if (para.anim) {
-      para.anim.progress(1).kill();
-      para.split?.revert();
-    }
-
-    para.split = new SplitText(para, {
-      type: "lines,words",
-      linesClass: "split-line",
-    });
-
-    if (para.split) {
-      para.anim = gsap.fromTo(
-        para.split.words,
-        { autoAlpha: 0, y: 80 },
-        {
-          autoAlpha: 1,
-          scrollTrigger: {
-            trigger: para.parentElement?.parentElement,
-            toggleActions: ToggleAction,
-            start: TriggerStart,
-          },
-          duration: 1,
-          ease: "power3.out",
-          y: 0,
-          stagger: 0.02,
-        }
-      );
-    }
+    para.style.opacity = "1";
+    para.style.visibility = "visible";
+    para.style.transform = "none";
   });
   titles.forEach((title: ParaElement) => {
-    if (title.anim) {
-      title.anim.progress(1).kill();
-      title.split?.revert();
-    }
+    cleanupSplit(title);
     title.split = new SplitText(title, {
       type: "chars,lines",
       linesClass: "split-line",
@@ -79,6 +78,4 @@ export default function setSplitText() {
       );
     }
   });
-
-  ScrollTrigger.addEventListener("refresh", () => setSplitText());
 }

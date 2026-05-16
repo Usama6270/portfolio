@@ -13,28 +13,25 @@ const About = () => {
           <div className="about-text-wrapper">
             <div className="intro-badge">
               <span className="dot"></span>
-              <span className="badge-text">Software Engineer</span>
+              <span className="badge-text">Full Stack Developer</span>
             </div>
             <h2 className="hello-text">Hello, I'm</h2>
             <h1 className="name-text">
-              <span className="gradient-text">Hateem</span>
+              <span className="gradient-text">Usama Jamshed</span>
             </h1>
             <p className="description para">
-              A final-year Software Engineering student at FAST-NUCES, Islamabad,
-              specializing in full-stack web development and AI-driven systems.
-              Proficient in the MERN stack with hands-on experience in cloud-native
-              technologies (Docker, Kubernetes) and RAG-based applications.
-              I excel at building scalable web applications and integrating AI solutions
-              for real-world problems.
+              Full Stack Developer skilled in the MERN stack, UI/UX design, applied AI/ML,
+              and DevOps practices. Experienced in building web applications, training ML
+              models, testing software, and delivering efficient, user-friendly solutions.
             </p>
 
             <div className="about-buttons">
               <a
-                href="/Hateem_CV.pdf"
-                download="Hateem_Khush_Bakht_CV.pdf"
+                href="/Usama_CV.pdf"
+                download="Usama_Jamshed_CV.pdf"
                 className="btn btn-primary"
                 onClick={() => {
-                  window.location.href = "/Hateem_CV.pdf";
+                  window.location.href = "/Usama_CV.pdf";
                 }}
               >
                 <FiDownload /> Download CV

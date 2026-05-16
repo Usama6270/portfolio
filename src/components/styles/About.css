@@ -45,6 +45,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  overflow-wrap: anywhere;
 }
 
 .intro-badge {
@@ -90,11 +91,11 @@
 }
 
 .name-text {
-  font-size: 5.5rem;
+  font-size: clamp(2.2rem, 7vw, 5.2rem);
   font-weight: 900;
-  line-height: 0.9;
-  letter-spacing: -3px;
-  margin-left: -5px;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin-left: 0;
   color: #fff;
 }
 
@@ -110,7 +111,7 @@
   font-size: 1.05rem;
   color: #adacac;
   line-height: 1.6;
-  max-width: 550px;
+  max-width: 700px;
   margin-top: -5px;
 }
 
@@ -245,15 +246,16 @@
 
 @media only screen and (max-width: 768px) {
   .about-section {
-    padding: 60px 0;
+    padding: 42px 0;
+    min-height: auto;
   }
   .name-text {
-    font-size: 3.2rem;
+    font-size: clamp(2rem, 10vw, 2.8rem);
     text-align: center;
   }
   
   .hello-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
     margin-bottom: 0;
   }
@@ -263,9 +265,10 @@
   }
   
   .description {
-    font-size: 1rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
     text-align: center;
-    margin: 15px auto;
+    margin: 10px auto;
   }
   
   .about-buttons {
@@ -276,8 +279,25 @@
   }
   
   .btn {
-    width: 90%;
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 14px;
     justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .about-container {
+    padding: 0 12px;
+  }
+  .about-header .title {
+    font-size: 2rem;
+  }
+  .badge-text {
+    font-size: 0.68rem;
+  }
+  .intro-badge {
+    padding: 5px 12px;
   }
 }
 

@@ -148,6 +148,9 @@
   position: relative;
   pointer-events: none;
   z-index: 2;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 .character-hover {
   position: absolute;
@@ -184,21 +187,28 @@
 
 @media screen and (max-width: 499px) {
   .landing-intro {
-    top: 15%;
+    top: 14%;
     width: 100%;
     text-align: center;
+    left: 0;
+    right: 0;
   }
   .landing-intro h2 {
     font-size: 16px;
   }
   .landing-intro h1 {
-    font-size: 32px;
-    line-height: 35px;
+    font-size: clamp(42px, 10.5vw, 48px);
+    line-height: 0.95;
+    letter-spacing: 1px;
   }
   .landing-info {
-    bottom: 10%;
+    bottom: 7%;
     width: 100%;
     text-align: center;
+    left: 0;
+    right: 0;
+    transform: none;
+    z-index: 10;
   }
   .landing-info h3 {
     font-size: 16px;
@@ -214,8 +224,36 @@
     margin-left: 0;
   }
   .character-model {
-    height: 60vh;
-    bottom: 20%;
+    height: 52vh;
+    bottom: 12%;
+  }
+
+  .landing-info h3 {
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    margin-bottom: 2px;
+  }
+
+  .landing-info .landing-info-main {
+    font-size: clamp(24px, 8vw, 32px);
+    min-height: 2.6em;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .landing-intro {
+    top: 16%;
+  }
+  .landing-intro h1 {
+    font-size: clamp(38px, 10vw, 44px);
+    line-height: 0.98;
+  }
+  .landing-info {
+    bottom: 6%;
+  }
+  .character-model {
+    height: 50vh;
+    bottom: 14%;
   }
 }
 
@@ -356,7 +394,7 @@ h2.landing-info-h2 {
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 66%;
+    left: 61%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -374,7 +412,7 @@ h2.landing-info-h2 {
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 70%;
+    left: 64%;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -394,5 +432,170 @@ h2.landing-info-h2 {
   }
   h2.landing-info-h2 {
     font-size: 75px;
+  }
+}
+
+.landing-info .landing-info-main {
+  margin: 8px 0 0 0;
+  margin-left: 0;
+  font-family: "Geist", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3.2vw, 52px);
+  line-height: 1.12;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #d5bcff;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  max-width: min(760px, 42vw);
+  width: min(760px, 42vw);
+  display: block;
+  position: relative;
+  min-height: 2.5em;
+  overflow: hidden;
+}
+
+.landing-info .landing-info-main .role-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  white-space: normal;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: roleSwap 7s ease-in-out infinite;
+}
+
+.landing-info .landing-info-main .role-text-2 {
+  animation-delay: 3.5s;
+}
+
+@keyframes roleSwap {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  45% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  55% {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .landing-info .landing-info-main {
+    max-width: 100%;
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+    min-height: 2.6em;
+  }
+
+  .landing-info .landing-info-main .role-text {
+    left: 50%;
+    white-space: normal;
+    width: 100%;
+    transform: translate(-50%, 18px);
+  }
+
+  @keyframes roleSwap {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, 18px);
+    }
+    10% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    45% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    55% {
+      opacity: 0;
+      transform: translate(-50%, -14px);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -14px);
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .landing-info .landing-info-main {
+    max-width: min(620px, 38vw);
+    width: min(620px, 38vw);
+    font-size: clamp(22px, 2.8vw, 42px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .landing-info .landing-info-main {
+    max-width: min(540px, 34vw);
+    width: min(540px, 34vw);
+    font-size: clamp(20px, 2.5vw, 34px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .landing-section {
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .landing-info {
+    width: 100%;
+    left: 0;
+    right: 0;
+    transform: none;
+    text-align: center;
+  }
+  .landing-info h3 {
+    font-size: clamp(16px, 3.5vw, 22px);
+  }
+  .landing-info .landing-info-main {
+    max-width: 100%;
+    width: 100%;
+    min-height: 2.8em;
+    font-size: clamp(22px, 6vw, 40px);
+  }
+
+  .landing-info .landing-info-main .role-text {
+    white-space: normal;
+    left: 50%;
+    transform: translate(-50%, 18px);
+  }
+
+  @keyframes roleSwap {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, 18px);
+    }
+    10% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    45% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    55% {
+      opacity: 0;
+      transform: translate(-50%, -14px);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -14px);
+    }
   }
 }

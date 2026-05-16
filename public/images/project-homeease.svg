@@ -1,0 +1,20 @@
+﻿<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102A43"/>
+      <stop offset="100%" stop-color="#243B53"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="160" fill="#3E7CB1" opacity="0.25"/>
+  <rect x="110" y="150" width="980" height="500" rx="30" fill="#0B1F33" stroke="#4EA8DE" stroke-width="3"/>
+  <text x="160" y="250" fill="#E6F1FF" font-family="Segoe UI, Arial" font-size="58" font-weight="700">HomeEase Mobile App</text>
+  <text x="160" y="320" fill="#8FBCE6" font-family="Segoe UI, Arial" font-size="30">Booking • Scheduling • Reviews • Earnings</text>
+  <rect x="160" y="390" width="230" height="130" rx="20" fill="#1B4965"/>
+  <rect x="420" y="390" width="230" height="130" rx="20" fill="#1B4965"/>
+  <rect x="680" y="390" width="230" height="130" rx="20" fill="#1B4965"/>
+  <text x="200" y="465" fill="#D9F0FF" font-family="Segoe UI, Arial" font-size="24">Customer</text>
+  <text x="482" y="465" fill="#D9F0FF" font-family="Segoe UI, Arial" font-size="24">Provider</text>
+  <text x="760" y="465" fill="#D9F0FF" font-family="Segoe UI, Arial" font-size="24">Admin</text>
+</svg>
+

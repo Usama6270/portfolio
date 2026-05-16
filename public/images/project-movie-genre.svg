@@ -1,0 +1,17 @@
+﻿<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2B2D42"/>
+      <stop offset="100%" stop-color="#4A4E69"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg3)"/>
+  <rect x="95" y="110" width="1010" height="580" rx="28" fill="#1A1C2B" stroke="#A8DADC" stroke-width="3"/>
+  <text x="150" y="230" fill="#F1FAEE" font-family="Segoe UI, Arial" font-size="54" font-weight="700">Movie Genre Detection</text>
+  <text x="150" y="295" fill="#B7C6E3" font-family="Segoe UI, Arial" font-size="30">ResNet50 + K-means • Trailer Frame Classification</text>
+  <polygon points="250,390 250,560 430,475" fill="#E63946"/>
+  <rect x="500" y="380" width="500" height="200" rx="20" fill="#33415C"/>
+  <text x="540" y="455" fill="#E0E1DD" font-family="Segoe UI, Arial" font-size="28">Semi-supervised Labeling</text>
+  <text x="540" y="505" fill="#C7D3F5" font-family="Segoe UI, Arial" font-size="24">YouTube Data ? Preprocess ? Train ? Evaluate</text>
+</svg>
+

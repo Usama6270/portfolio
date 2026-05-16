@@ -1,6 +1,5 @@
 import {
   FaGithub,
-  FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
@@ -58,7 +57,7 @@ const SocialIcons = () => {
       <div className="social-icons" data-cursor="disable" id="social">
         <span>
           <a
-            href="https://github.com/hateemxpam"
+            href="https://github.com/Usama6270"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -67,20 +66,11 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://www.linkedin.com/in/hateemkb/"
+            href="https://www.linkedin.com/in/usama-jamshed-a9a223264/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedinIn />
-          </a>
-        </span>
-        <span>
-          <a
-            href="https://www.instagram.com/_.hateem"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram />
           </a>
         </span>
       </div>

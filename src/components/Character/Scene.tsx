@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import setCharacter from "./utils/character";
 import setLighting from "./utils/lighting";
@@ -19,7 +19,6 @@ const Scene = () => {
   const sceneRef = useRef(new THREE.Scene());
   const { setLoading } = useLoading();
 
-  const [character, setChar] = useState<THREE.Object3D | null>(null);
   useEffect(() => {
     if (canvasDiv.current) {
       let rect = canvasDiv.current.getBoundingClientRect();
@@ -33,6 +32,9 @@ const Scene = () => {
         powerPreference: "high-performance",
       });
       renderer.setSize(container.width, container.height);
+      renderer.domElement.style.width = "100%";
+      renderer.domElement.style.height = "100%";
+      renderer.domElement.style.display = "block";
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.2)); // Capped for CPU performance
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1;
@@ -47,6 +49,7 @@ const Scene = () => {
       let headBone: THREE.Object3D | null = null;
       let screenLight: any | null = null;
       let mixer: THREE.AnimationMixer;
+      let characterResizeHandler: (() => void) | null = null;
 
       const clock = new THREE.Clock();
 
@@ -60,7 +63,6 @@ const Scene = () => {
           hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
           mixer = animations.mixer;
           let character = gltf.scene;
-          setChar(character);
           scene.add(character);
           headBone = character.getObjectByName("spine006") || null;
           screenLight = character.getObjectByName("screenlight") || null;
@@ -70,9 +72,10 @@ const Scene = () => {
               animations.startIntro();
             }, 2500);
           });
-          window.addEventListener("resize", () =>
-            handleResize(renderer, camera, canvasDiv, character)
-          );
+          characterResizeHandler = () => handleResize(renderer, camera, canvasDiv, character);
+          window.addEventListener("resize", characterResizeHandler);
+          // Ensure correct size on mobile after layout settles.
+          setTimeout(characterResizeHandler, 120);
         }
       });
 
@@ -127,13 +130,26 @@ const Scene = () => {
         renderer.render(scene, camera);
       };
       animate();
+      const fallbackResize = () => {
+        if (!canvasDiv.current) return;
+        const r = canvasDiv.current.getBoundingClientRect();
+        if (r.width > 0 && r.height > 0) {
+          renderer.setSize(r.width, r.height);
+          camera.aspect = r.width / r.height;
+          camera.updateProjectionMatrix();
+        }
+      };
+
+      window.addEventListener("resize", fallbackResize);
+
       return () => {
         clearTimeout(debounce);
         scene.clear();
         renderer.dispose();
-        window.removeEventListener("resize", () =>
-          handleResize(renderer, camera, canvasDiv, character!)
-        );
+        if (characterResizeHandler) {
+          window.removeEventListener("resize", characterResizeHandler);
+        }
+        window.removeEventListener("resize", fallbackResize);
         if (canvasDiv.current) {
           canvasDiv.current.removeChild(renderer.domElement);
         }

@@ -6,82 +6,43 @@ import {
   FaReact,
   FaNodeJs,
   FaGithub,
-  FaDocker,
-  FaAws,
   FaPython,
-  FaGitAlt,
-  FaJira
+  FaGitAlt
 } from "react-icons/fa";
 import {
   SiTailwindcss,
-  SiTypescript,
   SiMongodb,
   SiExpress,
-  SiPytorch,
-  SiFastapi,
-  SiSupabase,
-  SiPrisma,
-  SiLangchain,
-  SiHuggingface,
   SiPostman,
-  SiVite,
-  SiRedux,
-  SiMysql,
-  SiJquery,
-  SiKubernetes,
+  SiFigma
 } from "react-icons/si";
-import { GiBrain, GiProcessor, GiShieldReflect, GiConversation } from "react-icons/gi";
-import { MdApi, MdSchema } from "react-icons/md";
-import { DiScrum } from "react-icons/di";
+import { MdApi, MdDesignServices, MdStorage } from "react-icons/md";
+import { BiLogoVisualStudio } from "react-icons/bi";
 import "./styles/TechStack.css";
 
 const techData = [
-  // Frontend
-  { name: "React", icon: <FaReact color="#61DAFB" />, category: "frontend" },
-  { name: "JavaScript", icon: <FaJs color="#F7DF1E" />, category: "frontend" },
-  { name: "HTML5", icon: <FaHtml5 color="#E34F26" />, category: "frontend" },
-  { name: "CSS3", icon: <FaCss3Alt color="#1572B6" />, category: "frontend" },
-  { name: "Redux", icon: <SiRedux color="#764ABC" />, category: "frontend" },
-  { name: "Tailwind", icon: <SiTailwindcss color="#06B6D4" />, category: "frontend" },
-  { name: "jQuery", icon: <SiJquery color="#0769AD" />, category: "frontend" },
-  { name: "TypeScript", icon: <SiTypescript color="#3178C6" />, category: "frontend" },
-  { name: "Context API", icon: <FaReact color="#61DAFB" />, category: "frontend" },
-  { name: "Ajax", icon: <SiJquery color="#0769AD" />, category: "frontend" },
-  
-  // Backend & APIs
-  { name: "Node.js", icon: <FaNodeJs color="#339933" />, category: "backend" },
-  { name: "Express.js", icon: <SiExpress color="#ffffff" />, category: "backend" },
-  { name: "Python", icon: <FaPython color="#3776AB" />, category: "backend" },
-  { name: "FastAPI", icon: <SiFastapi color="#05998B" />, category: "backend" },
-  { name: "RESTful APIs", icon: <MdApi color="#00ff88" />, category: "backend" },
-  { name: "JSON", icon: <MdSchema color="#ffffff" />, category: "backend" },
-  
-  // AI & ML
-  { name: "RAG", icon: <GiBrain color="#c2a4ff" />, category: "ai" },
-  { name: "LangChain", icon: <SiLangchain color="#ffffff" />, category: "ai" },
-  { name: "PyTorch", icon: <SiPytorch color="#EE4C2C" />, category: "ai" },
-  { name: "Multimodal AI", icon: <GiProcessor color="#ffffff" />, category: "ai" },
-  { name: "Transformers", icon: <SiHuggingface color="#FFD21E" />, category: "ai" },
-  { name: "Prompt Eng.", icon: <GiConversation color="#3ECF8E" />, category: "ai" },
-  { name: "FAISS", icon: <GiBrain color="#ffffff" />, category: "ai" },
-  { name: "Ollama", icon: <GiShieldReflect color="#ffffff" />, category: "ai" },
-  
-  // Databases
-  { name: "MongoDB", icon: <SiMongodb color="#47A248" />, category: "database" },
-  { name: "MySQL", icon: <SiMysql color="#4479A1" />, category: "database" },
-  { name: "Supabase", icon: <SiSupabase color="#3ECF8E" />, category: "database" },
-  { name: "Prisma", icon: <SiPrisma color="#ffffff" />, category: "database" },
-  
-  // DevOps & Tools
-  { name: "Docker", icon: <FaDocker color="#2496ED" />, category: "devops" },
-  { name: "AWS", icon: <FaAws color="#FF9900" />, category: "devops" },
-  { name: "Kubernetes", icon: <SiKubernetes color="#326CE5" />, category: "devops" },
-  { name: "Git", icon: <FaGitAlt color="#F05032" />, category: "tools" },
-  { name: "GitHub", icon: <FaGithub color="#ffffff" />, category: "tools" },
-  { name: "Jira", icon: <FaJira color="#0052CC" />, category: "tools" },
-  { name: "Scrum", icon: <DiScrum color="#ffffff" />, category: "tools" },
-  { name: "Postman", icon: <SiPostman color="#FF6C37" />, category: "tools" },
-  { name: "Vite", icon: <SiVite color="#646CFF" />, category: "tools" },
+  { name: "React.js", icon: <FaReact color="#61DAFB" /> },
+  { name: "JavaScript (ES6+)", icon: <FaJs color="#F7DF1E" /> },
+  { name: "HTML5", icon: <FaHtml5 color="#E34F26" /> },
+  { name: "CSS3", icon: <FaCss3Alt color="#1572B6" /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss color="#06B6D4" /> },
+  { name: "Node.js", icon: <FaNodeJs color="#339933" /> },
+  { name: "Express.js", icon: <SiExpress color="#ffffff" /> },
+  { name: "RESTful APIs", icon: <MdApi color="#00ff88" /> },
+  { name: "Figma", icon: <SiFigma color="#F24E1E" /> },
+  { name: "Responsive Design", icon: <MdDesignServices color="#ffffff" /> },
+  { name: "Python", icon: <FaPython color="#3776AB" /> },
+  { name: "C++", icon: <MdStorage color="#c2a4ff" /> },
+  { name: "C#", icon: <MdStorage color="#8c52ff" /> },
+  { name: "NLP", icon: <MdDesignServices color="#00ff88" /> },
+  { name: "Supervised Learning", icon: <MdDesignServices color="#c2a4ff" /> },
+  { name: "Model Training", icon: <MdDesignServices color="#ffffff" /> },
+  { name: "SQL", icon: <MdStorage color="#4DB6AC" /> },
+  { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+  { name: "Git", icon: <FaGitAlt color="#F05032" /> },
+  { name: "GitHub", icon: <FaGithub color="#ffffff" /> },
+  { name: "Postman", icon: <SiPostman color="#FF6C37" /> },
+  { name: "VS Code", icon: <BiLogoVisualStudio color="#007ACC" /> }
 ];
 
 const TechStack = () => {
@@ -90,15 +51,10 @@ const TechStack = () => {
 
   return (
     <section className="techstack-container" id="techstack">
-      <h2 className="techstack-title">My Techstack</h2>
+      <h2 className="techstack-title">Technical Skills</h2>
 
       <div className="marquee-wrapper">
-        <Marquee
-          gradient={false}
-          speed={45}
-          pauseOnHover={true}
-          direction="left"
-        >
+        <Marquee gradient={false} speed={45} pauseOnHover direction="left">
           {row1.map((tech, index) => (
             <div className="tech-card" key={index}>
               <div className="tech-icon">{tech.icon}</div>
@@ -109,12 +65,7 @@ const TechStack = () => {
       </div>
 
       <div className="marquee-wrapper">
-        <Marquee
-          gradient={false}
-          speed={45}
-          pauseOnHover={true}
-          direction="right"
-        >
+        <Marquee gradient={false} speed={45} pauseOnHover direction="right">
           {row2.map((tech, index) => (
             <div className="tech-card" key={index}>
               <div className="tech-icon">{tech.icon}</div>
@@ -128,5 +79,3 @@ const TechStack = () => {
 };
 
 export default TechStack;
-
-

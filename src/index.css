@@ -121,6 +121,11 @@ body {
   z-index: 20;
 }
 
+/* add top padding so fixed navbar doesn't overlap content */
+#smooth-content {
+  padding-top: 120px;
+}
+
 .about-buttons {
   user-select: auto !important;
   -webkit-user-select: auto !important;
@@ -129,6 +134,19 @@ body {
 @media screen and (min-width: 768px) {
   body {
     --cWidth: 94%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #smooth-content {
+    padding-top: 88px;
+  }
+}
+@media screen and (max-width: 420px) {
+  #smooth-content {
+    padding-top: 82px;
+  }
+  body {
+    --cWidth: calc(100% - 18px);
   }
 }
 @media screen and (max-width: 900px) {

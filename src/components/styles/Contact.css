@@ -193,14 +193,78 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .contact-form {
-    padding: 25px;
+  .contact-section {
+    padding: 70px 0 40px;
+    margin-top: 10px;
   }
-  
+  .contact-title {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    letter-spacing: -1px;
+    margin-bottom: 26px;
+  }
+  .contact-main-grid {
+    gap: 28px;
+  }
+  .contact-left {
+    gap: 24px;
+  }
+  .contact-info-wrap {
+    gap: 18px;
+  }
+  .info-item h4,
+  .contact-socials-wrap h4 {
+    font-size: 0.68rem;
+    letter-spacing: 1.4px;
+    margin-bottom: 10px;
+  }
   .info-link {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    gap: 10px;
+  }
+  .info-link svg {
+    font-size: 1rem;
+  }
+  .social-icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+  }
+  .contact-form {
+    padding: 16px;
+    border-radius: 16px;
+    gap: 14px;
+  }
+  .form-group label {
+    font-size: 0.78rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+    padding: 11px 13px;
+  }
+  .submit-btn {
+    margin-top: 4px;
+    padding: 12px;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  .contact-footer {
+    margin-top: 34px;
+    padding-top: 16px;
+  }
+  .copyright {
+    font-size: 0.82rem;
   }
 }
 
+@media only screen and (max-width: 420px) {
+  .contact-container {
+    width: calc(100% - 12px);
+  }
+  .info-link {
+    font-size: 0.92rem;
+  }
+}
 
 

@@ -1,0 +1,18 @@
+﻿<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3A0CA3"/>
+      <stop offset="100%" stop-color="#7209B7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg4)"/>
+  <rect x="90" y="120" width="1020" height="560" rx="30" fill="#240046" stroke="#C77DFF" stroke-width="3"/>
+  <text x="150" y="230" fill="#F8F4FF" font-family="Segoe UI, Arial" font-size="52" font-weight="700">Sign Language Digit Recognition</text>
+  <text x="150" y="295" fill="#D4B8FF" font-family="Segoe UI, Arial" font-size="30">CNN Classification • Augmentation • Gesture Dataset</text>
+  <circle cx="300" cy="470" r="110" fill="#5A189A"/>
+  <text x="268" y="485" fill="#F3E8FF" font-family="Segoe UI, Arial" font-size="54" font-weight="700">5</text>
+  <rect x="470" y="380" width="560" height="190" rx="20" fill="#7B2CBF" opacity="0.75"/>
+  <text x="520" y="455" fill="#F5EBFF" font-family="Segoe UI, Arial" font-size="27">Robust pre-processing and model evaluation</text>
+  <text x="520" y="505" fill="#EBD9FF" font-family="Segoe UI, Arial" font-size="23">for accurate real-world sign digit predictions</text>
+</svg>
+
