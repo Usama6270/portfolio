@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { FiDownload } from "react-icons/fi";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
@@ -28,10 +29,12 @@ const Navbar = () => {
       let element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
         if (window.innerWidth > 1024) {
-          e.preventDefault();
           let elem = e.currentTarget as HTMLAnchorElement;
           let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
+          if (section) {
+            e.preventDefault();
+            smoother.scrollTo(section, true, "top top");
+          }
         }
       });
     });
@@ -68,6 +71,16 @@ const Navbar = () => {
           <li>
             <a data-href="#contact" href="#contact">
               <HoverLinks text="CONTACT" />
+            </a>
+          </li>
+          <li className="nav-cv-li">
+            <a 
+              href="/Hateem_CV.pdf" 
+              download="Hateem_Khush_Bakht_CV.pdf" 
+              className="nav-cv-btn"
+              data-cursor="disable"
+            >
+              CV <FiDownload />
             </a>
           </li>
         </ul>

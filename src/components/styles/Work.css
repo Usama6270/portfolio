@@ -398,15 +398,16 @@
   
   .modal-content {
     flex-direction: column;
-    max-height: 90vh;
+    max-height: 92vh;
   }
   
   .modal-image {
-    height: 350px;
+    height: 300px;
+    flex-shrink: 0;
   }
   
   .modal-info {
-    padding: 40px;
+    padding: 30px;
   }
 }
 
@@ -416,24 +417,71 @@
   }
   
   .work-section {
-    padding: 80px 0;
+    padding: 60px 0;
   }
   
   .work-section h2 {
     font-size: 2.2rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+  }
+  
+  .modal-overlay {
+    padding: 15px 10px;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-height: 85vh;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+    margin: 0 auto;
+  }
+
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    border-radius: 10px;
   }
   
   .modal-header h2 {
-    font-size: 2.2rem;
+    font-size: 1.7rem;
+    letter-spacing: -1px;
   }
   
   .modal-actions {
     flex-direction: column;
+    gap: 12px;
   }
   
-  .modal-overlay {
-    padding: 15px;
+  .modal-info {
+    padding: 20px;
+    padding-top: 35px;
+  }
+
+  .project-detail-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .modal-image {
+    height: 180px;
+  }
+
+  .modal-btn {
+    padding: 12px 20px;
+    font-size: 0.85rem;
   }
 }
 
